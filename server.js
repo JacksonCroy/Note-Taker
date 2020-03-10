@@ -56,7 +56,7 @@ app.post("/api/notes", function(req, res) {
 
         notes = JSON.parse(notes);
 
-        req.body.id = notes.length;
+        // req.body.id = notes.length;
 
         notes.push({ id: uuid(), ...notes })
 
