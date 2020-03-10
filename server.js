@@ -7,6 +7,7 @@ const fs = require("fs");
 
 console.log(uuid());
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // require("./routes.js")(app);
