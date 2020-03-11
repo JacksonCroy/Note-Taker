@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // require("./routes.js")(app);
 
-const notes = [];
+let notes = [];
 
 /// html routes
 
@@ -34,7 +34,7 @@ app.get("/notes", function(req, res) {
 app.get("/api/notes", function(err, res) {
     try {
 
-        notes = fs.readFileSync("public/db/db.json", );
+        notes = fs.readFileSync("public/db/db.json", "utf8");
 
         notes = JSON.parse(notes);
 
