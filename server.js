@@ -34,7 +34,7 @@ app.get("/notes", function(req, res) {
 app.get("/api/notes", function(err, res) {
     try {
 
-        notes = fs.readFile("public/db/db.json", "utf8");
+        notes = fs.readFileSync("public/db/db.json", );
 
         notes = JSON.parse(notes);
 
@@ -51,7 +51,7 @@ app.get("/api/notes", function(err, res) {
 app.post("/api/notes", function(req, res) {
     try {
 
-        notes = fs.readFile("public/db/db.json", "utf8");
+        notes = fs.readFilesync("public/db/db.json", "utf8");
         console.log(notes);
 
 
@@ -84,7 +84,7 @@ app.delete("/api/notes/:id", function(req, res) {
 
     try {
 
-        notes = fs.readFile("public/db/db.json", "utf8");
+        notes = fs.readFileSync("public/db/db.json", "utf8");
 
         notes = JSON.parse(notes);
 
