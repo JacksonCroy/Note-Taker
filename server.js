@@ -51,7 +51,7 @@ app.get("/api/notes", function(err, res) {
 app.post("/api/notes", function(req, res) {
     try {
 
-        notes = fs.readFilesync("public/db/db.json", "utf8");
+        notes = fs.readFileSync("public/db/db.json", "utf8");
         console.log(notes);
 
 
