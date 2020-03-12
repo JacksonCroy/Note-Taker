@@ -52,16 +52,24 @@ app.post("/api/notes", function(req, res) {
     try {
 
         notes = fs.readFileSync("public/db/db.json", "utf8");
-        console.log(notes);
+
 
 
         notes = JSON.parse(notes);
 
-        // req.body.id = notes.length;
 
-        notes.push({ id: uuid(), ...notes })
+        const newNote = {
+            id: uuid(),
+            title: req.body.title,
+            text: req.body.text
+        }
 
-        notes.push(req.body);
+        console.log(newNote);
+
+        notes.push(newNote);
+        console.log(notes);
+
+
 
         notes = JSON.stringify(notes);
 
